@@ -75,6 +75,9 @@
     {% if SOCIAL %}
     {% set solid = ['at', 'envelope', 'mailbox', 'rss'] %}
     {% set relme = ['at', 'envelope', 'mailbox', 'mastodon'] %}
+    {% set custom_svg = {
+      'bookmark': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" width="22" height="22"><path d="M0 80C0 53.5 21.5 32 48 32H400c26.5 0 48 21.5 48 48V240H0V80zM0 272H448V464c0 11.7-6.4 22.5-16.7 28.1s-22.8 5.1-32.6-1.3L224 394.7 49.3 490.8c-9.8 6.4-22.3 6.9-32.6 1.3S0 475.7 0 464V272z"/></svg>'
+    } %}
     <ul class="social">
       {% for name, link in SOCIAL %}
       <li>
@@ -82,7 +85,11 @@
            {% if name in relme %}rel="me"{% endif %}
            href="{{ link }}"
            target="_blank">
-          <i class="{% if name in solid %}fa-solid{% else %}fa-brands{% endif %} fa-{{ name }}"></i>
+          {% if name in custom_svg %}
+            {{ custom_svg[name] | safe }}
+          {% else %}
+            <i class="{% if name in solid %}fa-solid{% else %}fa-brands{% endif %} fa-{{ name }}"></i>
+          {% endif %}
         </a>
       </li>
       {% endfor %}

@@ -24,7 +24,7 @@ PYGMENTS_STYLE_DARK = 'native'  # Dark mode
 
 # Static files
 STATIC_PATHS = ['images']
-SITELOGO = '/images/kaaviya.jpg'
+SITELOGO = '/images/kaaviya.jpeg'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -39,9 +39,9 @@ DISPLAY_PAGES_ON_MENU = True
 # Social widget
 SOCIAL = (
     ("github", "https://github.com/kaaviyasri-varshini"),
-    ("linkedin", "www.linkedin.com/in/kaaviyasri-varshini-r-4ba6853b7"),
-    ("blog", "https://articlevil.substack.com/"),
-    ("newspaper", "https://kaaviyasri-varshini.github.io/pynotes/"),
+    ("linkedin", "https://www.linkedin.com/in/kaaviyasri-varshini-r-4ba6853b7"),
+    ("bookmark", "https://articlevil.substack.com/"),
+    ("python", "https://kaaviyasri-varshini.github.io/pynotes/"),
 )
 
 DEFAULT_PAGINATION = 10

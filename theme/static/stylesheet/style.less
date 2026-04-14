@@ -426,18 +426,20 @@ ul.social {
 
   a:hover {
     z-index: 2;
-    -webkit-transform: translateY(-2px);
-    transform: translateY(-2px);
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+    transition: transform 0.2s ease;
   }
 
   a {
     display: inline-block;
-    width: 36px;
-    height: 36px;
+    width: 50px;
+    height: 50px;
     border-radius: 100%;
     text-align: center;
-    font-size: .8em;
-    line-height: 36px;
+    font-size: 1.4em;
+    line-height: 50px;
+    margin: 0 3px;
   }
 
   a.sc-facebook {
@@ -535,6 +537,25 @@ ul.social {
 
   a.sc-lastfm {
     background-color: @lastfm-bg-color;
+  }
+
+  a.sc-bookmark {
+    background-color: #ff6719;
+    color: #fff;
+  }
+
+  a.sc-python {
+    background-color: #ffd43b;
+    color: #306998;
+  }
+
+  a svg {
+    vertical-align: middle;
+    fill: #fff;
+  }
+
+  a.sc-python i {
+    color: #306998;
   }
 
   // Add circular background to X icon to match other social icons
