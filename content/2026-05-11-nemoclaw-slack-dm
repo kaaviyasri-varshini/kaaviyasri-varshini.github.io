@@ -11,7 +11,7 @@ Slug: nemoclaw-slack-bot-lessons-learned
 
 Some lessons come from tutorials. Others come from staring at an error message at 10 PM wondering if you've broken something that was never broken to begin with.
 
-This is one of the second kind.
+This is one of the second kind
 
 I'd been tinkering with **NemoClaw** — a platform that lets you build AI agents and plug them into messaging apps like Slack, Telegram, and Discord. The setup was surprisingly painless. You write a prompt, configure a few things, and suddenly you've got a little AI assistant living inside your team's Slack workspace.
 
