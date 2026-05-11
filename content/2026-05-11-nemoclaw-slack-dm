@@ -1,0 +1,164 @@
+Title: I Tried to Make My NemoClaw Bot Say "Hi" on Slack. It Taught Me Everything.
+Date: 2026-05-11
+Category: Tutorials
+Tags: NemoClaw, Slack, AI-agents, bots, developer-tools, beginner-guide, lessons-learned
+Slug: nemoclaw-slack-bot-lessons-learned
+
+
+**A personal journey through Slack permissions, missing scopes, and one surprisingly elegant design decision.**
+
+---
+
+Some lessons come from tutorials. Others come from staring at an error message at 10 PM wondering if you've broken something that was never broken to begin with.
+
+This is one of the second kind.
+
+I'd been tinkering with **NemoClaw** — a platform that lets you build AI agents and plug them into messaging apps like Slack, Telegram, and Discord. The setup was surprisingly painless. You write a prompt, configure a few things, and suddenly you've got a little AI assistant living inside your team's Slack workspace.
+
+I felt like a wizard. A very impatient wizard with one very simple goal:
+
+> Send a "hi" to a new teammate who just joined our workspace.
+
+Ninety minutes later, I finally understood why that was never going to work the way I imagined — and why that's actually a *good* thing.
+
+---
+
+## The Setup Looked Perfect
+
+NemoClaw connects to Slack through something called **Socket Mode**. No webhooks, no public URLs, no infrastructure headaches. You hand it a bot token and an app-level token, it listens to your workspace in real time, and messages flow in both directions.
+
+I had everything dialed in. Bot was online. Green dot and everything.
+
+So I typed my first instruction with complete confidence:
+
+> *"Send a hello text to U0B31SCK1C2 on Slack, a DM."*
+
+The agent thought for a moment. Then came the reply:
+
+**"missing scope."**
+
+I blinked. Then I went to check my scopes.
+
+---
+
+## Round One: The Permission Rabbit Hole
+
+I opened the Slack app dashboard and went through every permission like I was doing a pre-flight checklist:
+
+- `chat:write` ✅
+- `im:write` ✅
+- `users:read` ✅
+- `files:write` ✅ (added it just in case — why not?)
+
+I reinstalled the app. Generated a fresh token. Updated the NemoClaw config. Pasted everything back in. Held my breath. Tried again.
+
+**Still "missing scope."**
+
+At this point I was convinced Slack's permission system had a personal grudge against me.
+
+---
+
+## Round Two: A Red Herring in Disguise
+
+Scrolling through Slack, I noticed something: the teammate I was trying to message showed up as **"Invited member."** They hadn't officially accepted the invite yet.
+
+*That's it,* I thought. *Slack won't let bots message people who haven't joined.*
+
+I waited. They accepted. Status updated to active.
+
+I tried again. The error changed.
+
+Now it said: **"channel_not_found."**
+
+A different error! Progress. I felt genuinely excited about being wrong in a new way.
+
+I dug into the Slack API docs and discovered something I hadn't thought about: direct messages have their own channel IDs. They start with `D...` instead of `C...` (which is for public channels). I tracked down the DM channel ID — `D0B33P21L6M` — and fed that to NemoClaw instead:
+
+> *"Send hi to D0B33P21L6M on Slack."*
+
+**"channel_not_found."**
+
+The channel very much existed. I could see it right there in Slack. But NemoClaw insisted it didn't. I sat back in my chair and stared at the ceiling for a moment.
+
+---
+
+## The Realization That Changed Everything
+
+After enough failed attempts, something finally clicked.
+
+NemoClaw isn't built to *start* conversations. It's built to *continue* them.
+
+Think of it this way: a receptionist doesn't cold-call strangers on your behalf. They wait at the desk. When someone walks in and says hello, the receptionist helps them. That's the entire job description — and it's a deliberate, thoughtful one.
+
+NemoClaw works the same way. It sits quietly in your Slack workspace, listening via Socket Mode. When a human sends a message to the bot — or @mentions it in a channel — NemoClaw delivers that as a task to your agent. You respond. NemoClaw routes your reply back.
+
+It's an *inbound* system. Not an outbound one.
+
+And what I was asking it to do — cold-DM someone who had never interacted with the bot — wasn't a bug I needed to fix. It was a boundary that was working exactly as designed.
+
+---
+
+## The Fix Was Embarrassingly Simple
+
+I asked my teammate to send one message to the NemoClaw bot:
+
+> *"hello @NC"*
+
+Instantly, it appeared in my NemoClaw interface as a new task. I typed:
+
+> *"hi"*
+
+Done. The message landed in their Slack DM. No scope errors. No channel IDs. No reinstalling tokens. No ceiling-staring.
+
+One message from a human, one reply from the agent. That's the entire workflow.
+
+---
+
+## The Mental Model Worth Keeping
+
+If you're building with NemoClaw — or really any AI agent on Slack — here's the table I wish someone had handed me before I started:
+
+| What you want to do | Does it work? |
+|---|---|
+| Bot cold-DMs someone using a user ID | ❌ Not supported |
+| Someone messages the bot, bot replies | ✅ Works perfectly |
+| Bot responds in a channel it's been invited to | ✅ Works perfectly |
+| Bot replies to an @mention in a thread | ✅ Works perfectly |
+
+The pattern is always the same: **human initiates, NemoClaw responds.**
+
+---
+
+## Why This Is Actually the Right Design
+
+I'll be honest — my first reaction was frustration. I wanted the agent to be *proactive*. To reach out, initiate, feel truly agentic.
+
+But after sitting with it for a bit, I came around completely. Here's why NemoClaw's approach makes sense:
+
+**Privacy.** Bots can't message people who haven't opted in. Nobody wakes up to unsolicited AI DMs from a tool their employer set up.
+
+**Clarity.** Every bot interaction has a clear origin point: a human said hello first. There's no wondering why a bot is suddenly in your inbox.
+
+**Trust.** Workspace admins don't have to worry about a misconfigured agent spamming the entire team at 2 AM.
+
+**Simplicity.** No complex state management, no outbound queues, no campaign logic. Just: someone talks to the bot, the bot responds.
+
+NemoClaw gives you an AI agent that *participates* in conversations — not one that *broadcasts* into them. And in a world full of tools aggressively fighting for your attention, an AI that waits to be invited? That's a feature. A real one.
+
+---
+
+## The One Thing I'd Tell Past Me
+
+Skip the permission debugging. Skip the channel ID hunting. Ask yourself one question before you do anything else:
+
+> **Has this person talked to my bot yet?**
+
+If the answer is no — that's your answer. Ask them to send one message to @YourBot. Then reply through NemoClaw. It'll work on the first try.
+
+NemoClaw isn't broken. It isn't missing a feature. It's just polite.
+
+And honestly, after spending ninety minutes fighting with scope errors? Polite is everything.
+
+---
+
+
