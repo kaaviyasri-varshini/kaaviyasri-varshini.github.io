@@ -3,7 +3,7 @@ Date: 2026-05-11
 Category: Tutorials
 Tags: NemoClaw, Slack, AI-agents, bots, developer-tools, beginner-guide, lessons-learned
 Slug: nemoclaw-slack-bot-lessons-learned
-
+---
 
 **A personal journey through Slack permissions, missing scopes, and one surprisingly elegant design decision.**
 
