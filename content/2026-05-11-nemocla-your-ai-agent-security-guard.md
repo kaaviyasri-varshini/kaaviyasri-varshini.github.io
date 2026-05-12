@@ -1,9 +1,8 @@
-Title: NemoClaw: Your AI Agent's Security Guard
+Title: NemoClaw Your AI Agent's Security Guard
 Date: 2026-05-11
 Category: Tutorials
 Tags: GenAI, Azure, Microsoft-Foundry, AI-apps, beginner-guide, developer-tools
-Slug: how-to-run-an-ai-agent-safely-with-nemoclaw
-
+Slug: nemoclaw-your-ai-agents-security-guard
 ---
 
 ## Have You Ever Wondered How Some People Have an AI That Works for Them 24/7 — Even While They Sleep? The Secret Isn't a Team of Engineers — It's the Right Setup.
