@@ -3,7 +3,7 @@ SITENAME = 'KaaviyasriVarshini'
 SITETITLE = 'KaaviyasriVarshini'
 SITEURL = ""
 PATH = "content"
-TIMEZONE = 'America/Moncton'
+TIMEZONE = 'Asia/Kolkata'
 DEFAULT_LANG = 'en'
 THEME = 'theme'
 
