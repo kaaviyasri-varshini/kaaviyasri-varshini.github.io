@@ -1,4 +1,4 @@
-Title: LangChain Project Setup & First Execution: From Zero to Your First LLM Call
+Title: LangChain Project Setup & First Execution
 Date: 2026-05-17
 Category: AI & Machine Learning
 Tags: langchain, python, setup, tutorial, beginner, llm, api-keys, debugging
