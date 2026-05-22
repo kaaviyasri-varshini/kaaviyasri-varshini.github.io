@@ -394,13 +394,3 @@ Prompt templates are essential for building maintainable LangChain applications:
 
 In the next post, we'll explore **managing prompt changes safely** and strategies for testing and monitoring prompt performance in production.
 
-## Try It Yourself
-
-Create a template for your use case:
-1. Identify repetitive prompts in your code
-2. Extract common patterns into variables
-3. Create a `PromptTemplate` with those variables
-4. Store it in a separate file
-5. Test with different inputs
-
-What will you build with prompt templates?
