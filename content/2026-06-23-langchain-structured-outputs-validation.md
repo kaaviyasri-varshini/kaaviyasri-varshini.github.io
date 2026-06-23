@@ -1,5 +1,5 @@
 Title: LangChain Structured Outputs: Building Reliable Validation Pipelines
-Date: 2026-05-20
+Date: 2026-06-23
 Category: AI Engineering
 Tags: langchain, structured-outputs, validation, python, ai-development
 Slug: langchain-structured-outputs-validation
