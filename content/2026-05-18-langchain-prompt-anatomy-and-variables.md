@@ -89,7 +89,7 @@ print(final_prompt)
 **Multiple Variables in Context:**
 
 ```python
-template = """
+temp = """
 You are a {role} with {years} years of experience.
 
 Task: {task}
