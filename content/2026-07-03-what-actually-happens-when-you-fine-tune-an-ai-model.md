@@ -123,3 +123,5 @@ From there, it's ready to do the actual job: read a brand-new sentence it's neve
 Fine-tuning isn't really about teaching a model language from zero — it's about taking something that already understands the basics and giving it focused, honest practice on exactly the problem you care about, then checking its work with the right kind of test, not just a flattering one.
 
 The vocabulary is new, but the idea is old: good practice, honest feedback, and the right measure of success.
+
+
