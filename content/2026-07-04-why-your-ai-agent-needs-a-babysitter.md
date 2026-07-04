@@ -1,5 +1,5 @@
 Title: Why Your AI Agent Needs a Babysitter (And Why That's a Good Thing)
-Date: 2026-07-03
+Date: 2026-07-04
 Category: AI Agents
 Tags: AI-agents, safety, reliability, guardrails, prompt-injection, human-in-the-loop, ai-engineering
 Slug: why-your-ai-agent-needs-a-babysitter
