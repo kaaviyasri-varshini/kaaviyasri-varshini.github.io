@@ -1,5 +1,5 @@
 Title: So, What Actually Happens When You "Fine-Tune" an AI Model?
-Date: 2026-07-03
+Date: 2026-07-04
 Category: AI Engineering
 Tags: fine-tuning, machine-learning, NLP, beginner-guide, AI-models
 Slug: what-actually-happens-when-you-fine-tune-an-ai-model
