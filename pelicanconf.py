@@ -1,6 +1,6 @@
 AUTHOR = 'Kaaviyasri Varshini'
-SITENAME = 'KaaviyasriVarshini'
-SITETITLE = 'KaaviyasriVarshini'
+SITENAME = 'Kaaviyasri Varshini'
+SITETITLE = 'Kaaviyasri Varshini'
 SITEURL = ""
 PATH = "content"
 TIMEZONE = 'Asia/Kolkata'
