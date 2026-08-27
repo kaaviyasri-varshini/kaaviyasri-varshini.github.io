@@ -21,17 +21,17 @@
            when=article.locale_date,
            category='<a href="%s/%s">%s</a>'|format(SITEURL, article.category.url, article.category)|safe) }}
 
-      {% if article.tags and not HOME_HIDE_TAGS %}
-          &#8226; {{ _('Tagged with') }}
-          {% for tag in article.tags %}
-              <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %},{% endif %}
-          {% endfor %}
-      {% endif %}
-
       {% if PLUGINS and 'post_stats' in PLUGINS %}
         &#8226; {{ _('%(minutes)s min read', minutes=article.stats['read_mins']) }}
       {% endif %}
     </p>
+    {% if article.tags and not HOME_HIDE_TAGS %}
+    <div class="tag-cloud">
+      {% for tag in article.tags %}
+        <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
   </header>
   <div>
     {% if summarise or article.metadata['summary'] or SUMMARY_MAX_LENGTH %}

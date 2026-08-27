@@ -193,3 +193,18 @@ div.figure {
     color: @text-color-dark-theme;
   }
 }
+
+// Tag pill — dark theme overrides
+.tag-cloud {
+  a {
+    background-color: mix(@very-dark-grey, @primary-darker, 60%);
+    border-color: mix(@primary-mid, @primary-darker, 28%);
+    color: @primary-light;
+
+    &:hover {
+      color: #fff;
+      border-color: @primary-light;
+      box-shadow: 0 0 0 2px fade(@primary-light, 18%);
+    }
+  }
+}

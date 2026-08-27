@@ -340,22 +340,38 @@ main {
 }
 
 .tag-cloud {
-  a {
-    background-color: @tag-bg;
-    padding: .35em .75em;
-    font-size: .74em;
-    line-height: 1;
-    color: @tag-text-color;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: .25em;
-    display: inline-block;
-    margin: 0 4px 5px 0;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0 4px 0;
 
-  a:hover {
-    background-color: @tag-hover-color;
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background-color: mix(@primary-dark, @body-bg, 18%);
+    border: 1px solid mix(@primary-mid, @body-bg, 35%);
+    color: @primary-mid;
+    padding: .3em .75em .3em .6em;
+    font-size: .76em;
+    line-height: 1.4;
+    border-radius: 999px;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, color 0.18s ease;
+
+    &::before {
+      content: "◆";
+      font-size: .65em;
+      opacity: 0.55;
+      flex-shrink: 0;
+    }
+
+    &:hover {
+      color: @primary-dark;
+      border-color: @primary-mid;
+      box-shadow: 0 0 0 2px fade(@primary-mid, 22%);
+    }
   }
 }
 
