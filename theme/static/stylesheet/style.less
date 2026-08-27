@@ -44,10 +44,11 @@ body {
   margin: 0;
   padding: 0;
   background-color: @body-bg;
-  color: @text-color;
+  // Slightly deeper than @primary-dark (#464866) for better contrast on the light bg
+  color: #353656;
   font-family: @sans;
   font-size: 1.02em;
-  line-height: 1.2em;
+  line-height: 1.5em;
 }
 
 a {
@@ -169,12 +170,34 @@ main {
 
     header {
       h1, h2 {
-        margin-bottom: 0;
+        // Give the title a bit more breathing room before the metadata line
+        margin-bottom: 0.3em;
       }
 
       p {
         color: @header-text-color;
         font-size: 0.86em;
+        // Push metadata line away from the title and down from the excerpt
+        margin-top: 0.25em;
+        margin-bottom: 0.9em;
+
+        // Inline tag links in the index metadata line
+        a[href*="/tag/"] {
+          display: inline-block;
+          padding: .2em .5em;
+          margin: 0.1em 0.1em;
+          background-color: @tag-bg;
+          color: @tag-text-color;
+          border-radius: .25em;
+          font-size: 1em;  // inherit the 0.86em from the <p>
+          line-height: 1.4;
+          white-space: nowrap;
+          transition: background-color 0.15s ease;
+
+          &:hover {
+            background-color: @tag-hover-color;
+          }
+        }
       }
 
       .translations {
@@ -184,6 +207,19 @@ main {
           font-weight: 600;
         }
       }
+    }
+
+    // Summary/excerpt text: higher contrast, more line-height for readability
+    > div > div {
+      color: #353656;
+      line-height: 1.65em;
+    }
+
+    // Space between excerpt and "Continue reading" button
+    > div > .btn,
+    > div > br + .btn,
+    > div > br {
+      margin-top: 0.85em;
     }
 
     code, kbd, samp, pre {
@@ -324,9 +360,21 @@ main {
 }
 
 .tag-cloud {
+  // Give the tag container some breathing room at the top
+  margin-top: 0.75em;
+
+  p {
+    // Flex wrap so tags line up with consistent gaps
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45em;
+    margin: 0;
+  }
+
   a {
     background-color: @tag-bg;
-    padding: .2em .6em .2em;
+    // Increased vertical padding for better tap targets (min ~44px effective area)
+    padding: .45em .85em;
     font-size: .74em;
     line-height: 1;
     color: @tag-text-color;
@@ -334,6 +382,8 @@ main {
     white-space: nowrap;
     vertical-align: baseline;
     border-radius: .25em;
+    // Smooth background transition on hover
+    transition: background-color 0.15s ease;
   }
 
   a:hover {
@@ -344,7 +394,8 @@ main {
 a.btn,
 section#isso-thread section.auth-section p.post-action input {
   background-color: @btn-bg;
-  padding: .6em .6em;
+  // Increased vertical padding for a comfortable tap target
+  padding: .65em 1.1em;
   font-size: .8em;
   line-height: 1;
   color: @btn-text-color;
@@ -353,6 +404,9 @@ section#isso-thread section.auth-section p.post-action input {
   vertical-align: baseline;
   border: none;
   border-radius: .25em;
+  transition: background-color 0.15s ease;
+  // Inline-block so padding applies correctly in all contexts
+  display: inline-block;
 }
 
 a.btn:hover {
@@ -427,9 +481,10 @@ ul.social {
 
   a:hover {
     z-index: 2;
-    -webkit-transform: translateY(-4px);
-    transform: translateY(-4px);
-    transition: transform 0.2s ease;
+    opacity: 0.82;
+    -webkit-transform: translateY(-4px) scale(1.08);
+    transform: translateY(-4px) scale(1.08);
+    transition: transform 0.18s ease, opacity 0.18s ease;
   }
 
   a {
@@ -441,6 +496,8 @@ ul.social {
     font-size: 1.4em;
     line-height: 50px;
     margin: 0 3px;
+    // Transition on the base element so the animation is smooth both ways
+    transition: transform 0.18s ease, opacity 0.18s ease;
   }
 
   a.sc-facebook {

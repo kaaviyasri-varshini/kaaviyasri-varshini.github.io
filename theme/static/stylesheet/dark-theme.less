@@ -23,7 +23,8 @@ h6 {
 
 body {
   background-color: @body-bg-dark-theme;
-  color: @text-color-dark-theme;
+  // Brighter than the default #A9AEBE for better contrast on dark navy (#2E3047)
+  color: #C8CEDF;
 }
 
 a {
@@ -61,6 +62,11 @@ main {
   }
 
   article {
+    // Override the light-mode hardcoded excerpt text color
+    > div > div {
+      color: #C8CEDF;
+    }
+
     kbd {
       background-color: #080808;
       color: @light-grey;
