@@ -169,12 +169,15 @@ main {
 
     header {
       h1, h2 {
-        margin-bottom: 0;
+        margin-bottom: 6px;
       }
 
       p {
         color: @header-text-color;
         font-size: 0.86em;
+        margin-top: 4px;
+        margin-bottom: 10px;
+        line-height: 1.6;
       }
 
       .translations {
@@ -184,6 +187,19 @@ main {
           font-weight: 600;
         }
       }
+    }
+
+    // Excerpt text spacing
+    > div > div {
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    // Continue reading button spacing
+    > div > br + a.btn,
+    > div a.btn {
+      margin-top: 14px;
+      display: inline-block;
     }
 
     code, kbd, samp, pre {
@@ -326,7 +342,7 @@ main {
 .tag-cloud {
   a {
     background-color: @tag-bg;
-    padding: .2em .6em .2em;
+    padding: .35em .75em;
     font-size: .74em;
     line-height: 1;
     color: @tag-text-color;
@@ -334,6 +350,8 @@ main {
     white-space: nowrap;
     vertical-align: baseline;
     border-radius: .25em;
+    display: inline-block;
+    margin: 0 4px 5px 0;
   }
 
   a:hover {
@@ -344,7 +362,7 @@ main {
 a.btn,
 section#isso-thread section.auth-section p.post-action input {
   background-color: @btn-bg;
-  padding: .6em .6em;
+  padding: .65em 1.1em;
   font-size: .8em;
   line-height: 1;
   color: @btn-text-color;
@@ -429,7 +447,9 @@ ul.social {
     z-index: 2;
     -webkit-transform: translateY(-4px);
     transform: translateY(-4px);
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, opacity 0.2s ease, filter 0.2s ease;
+    opacity: 0.88;
+    filter: brightness(1.18);
   }
 
   a {
