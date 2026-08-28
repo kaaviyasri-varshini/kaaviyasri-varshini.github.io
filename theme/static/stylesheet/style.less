@@ -47,7 +47,7 @@ body {
   color: @text-color;
   font-family: @sans;
   font-size: 1.02em;
-  line-height: 1.2em;
+  line-height: 1.55em;
 }
 
 a {
@@ -76,6 +76,9 @@ aside {
   background-color: @sidebar-bg;
   color: @sidebar-text-color;
   text-align: center;
+  // Soft right border to visually separate sidebar from main content
+  box-shadow: 2px 0 18px 0 rgba(0,0,0,0.18);
+  border-right: 1px solid rgba(255,255,255,0.06);
 
   a {
     color: @sidebar-link-color;
@@ -96,6 +99,15 @@ aside {
 
     h1 {
       margin: 15px 0 5px 0;
+    }
+
+    // Bio/tagline styling — slightly muted, tighter than the heading
+    p.sitesubtitle {
+      margin: 4px 0 18px 0;
+      font-size: .85em;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.72);
+      font-style: italic;
     }
 
     p {
@@ -190,15 +202,22 @@ main {
     }
 
     // Excerpt text spacing
-    > div > div {
+    > div > div.article-excerpt {
       margin-top: 10px;
-      line-height: 1.6;
+      line-height: 1.5;
+      font-size: .96em;
+      color: inherit;
     }
 
-    // Continue reading button spacing
-    > div > br + a.btn,
-    > div a.btn {
-      margin-top: 14px;
+    // Keep legacy div > div spacing as fallback
+    > div > div {
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+
+    // Continue reading button — sits directly after excerpt, no <br> needed
+    > div > a.btn {
+      margin-top: 16px;
       display: inline-block;
     }
 
@@ -368,18 +387,54 @@ main {
     }
 
     &:hover {
-      color: @primary-dark;
-      border-color: @primary-mid;
-      box-shadow: 0 0 0 2px fade(@primary-mid, 22%);
+      color: @accent;
+      border-color: @accent;
+      box-shadow: 0 0 0 2px fade(@accent, 18%);
     }
+  }
+
+  // Secondary/muted tag row shown beneath "Continue reading"
+  &.tag-cloud--secondary {
+    margin-top: 14px;
+
+    a {
+      font-size: .72em;
+      opacity: 0.72;
+      color: @primary-mid;
+      border-color: mix(@primary-mid, @body-bg, 25%);
+
+      &:hover {
+        opacity: 1;
+        color: @accent;
+        border-color: @accent;
+        box-shadow: 0 0 0 2px fade(@accent, 16%);
+      }
+    }
+  }
+
+  // "+N more" overflow pill
+  .tag-overflow {
+    display: inline-flex;
+    align-items: center;
+    background-color: transparent;
+    border: 1px dashed mix(@primary-mid, @body-bg, 30%);
+    color: @primary-mid;
+    padding: .3em .7em;
+    font-size: .72em;
+    line-height: 1.4;
+    border-radius: 999px;
+    white-space: nowrap;
+    opacity: 0.6;
   }
 }
 
 a.btn,
 section#isso-thread section.auth-section p.post-action input {
   background-color: @btn-bg;
-  padding: .65em 1.1em;
-  font-size: .8em;
+  padding: .7em 1.4em;
+  font-size: .82em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   line-height: 1;
   color: @btn-text-color;
   text-align: center;
@@ -387,10 +442,12 @@ section#isso-thread section.auth-section p.post-action input {
   vertical-align: baseline;
   border: none;
   border-radius: .25em;
+  transition: background-color 0.18s ease, box-shadow 0.18s ease;
 }
 
 a.btn:hover {
   background-color: @btn-hover-color;
+  box-shadow: 0 2px 10px fade(@accent, 35%);
 }
 
 .center, .text-center {
@@ -453,7 +510,8 @@ ul.list {
 
 ul.social {
   font-size: 1.6em;
-  padding-top: 20px;
+  padding-top: 24px;
+  padding-bottom: 8px;
 
   li {
     display: inline;
@@ -470,13 +528,13 @@ ul.social {
 
   a {
     display: inline-block;
-    width: 50px;
-    height: 50px;
+    width: 52px;
+    height: 52px;
     border-radius: 100%;
     text-align: center;
     font-size: 1.4em;
-    line-height: 50px;
-    margin: 0 3px;
+    line-height: 52px;
+    margin: 0 5px;
   }
 
   a.sc-facebook {
@@ -649,7 +707,8 @@ ul.social {
       }
 
       ul.social {
-        padding-top: 32px;
+        padding-top: 36px;
+        padding-bottom: 12px;
       }
     }
   }

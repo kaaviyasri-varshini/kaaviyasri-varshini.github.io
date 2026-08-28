@@ -5,6 +5,12 @@
 @primary-darker: #2E3047;  // darker shade for dark theme backgrounds
 @primary-lightest: #E8EBF5; // very light tint for body background
 
+// Accent color — teal/cyan used exclusively for interactive elements
+// (links, "Continue reading" button, tag hover states)
+@accent: #2ABFBF;           // teal accent — pops against dark backgrounds
+@accent-dark: #1E9696;      // darker teal for pressed/hover states (light mode)
+@accent-light: #4DD9D9;     // lighter teal for hover states in dark mode
+
 @white:  #ffffff;
 @grey: #333333;
 @light-grey:  #eeeeee;
@@ -24,8 +30,8 @@
 @text-color-dark-theme: #A9AEBE;
 
 // Links
-@link-color: #5A6199;
-@link-hover-color: @primary-dark;
+@link-color: @accent;
+@link-hover-color: @accent-dark;
 
 // Sidebar (aside)
 @sidebar-bg: @primary-dark;
@@ -35,9 +41,9 @@
 @sidebar-link-hover-color: @primary-light;
 
 // Buttons
-@btn-bg: @primary-dark;
-@btn-text-color: @white;
-@btn-hover-color: @primary-mid;
+@btn-bg: @accent;
+@btn-text-color: #0f2020;
+@btn-hover-color: @accent-dark;
 
 // Tag cloud
 @tag-bg: @primary-dark;

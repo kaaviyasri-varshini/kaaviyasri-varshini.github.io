@@ -27,11 +27,11 @@ body {
 }
 
 a {
-  color: #8B92B8;
+  color: @accent-light;
 }
 
 a:hover {
-  color: @primary-light;
+  color: @accent;
 }
 
 hr {
@@ -42,10 +42,16 @@ hr {
 aside {
   background-color: @sidebar-bg-dark-theme;
   color: @sidebar-text-color;
+  border-right: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 2px 0 24px 0 rgba(0,0,0,0.45);
 
   form.navbar-search input#tipue_search_input {
     background-color: @very-dark-grey;
     color: @light-grey;
+  }
+
+  p.sitesubtitle {
+    color: rgba(255,255,255,0.55);
   }
 }
 
@@ -202,9 +208,40 @@ div.figure {
     color: @primary-light;
 
     &:hover {
-      color: #fff;
-      border-color: @primary-light;
-      box-shadow: 0 0 0 2px fade(@primary-light, 18%);
+      color: @accent-light;
+      border-color: @accent;
+      box-shadow: 0 0 0 2px fade(@accent, 20%);
     }
+  }
+
+  &.tag-cloud--secondary {
+    a {
+      opacity: 0.65;
+      color: @primary-mid;
+      border-color: mix(@primary-mid, @primary-darker, 22%);
+
+      &:hover {
+        opacity: 1;
+        color: @accent-light;
+        border-color: @accent;
+        box-shadow: 0 0 0 2px fade(@accent, 16%);
+      }
+    }
+
+    .tag-overflow {
+      border-color: mix(@primary-mid, @primary-darker, 20%);
+      color: @primary-mid;
+    }
+  }
+}
+
+// Button — dark mode keeps accent foreground with dark text for readability
+a.btn {
+  background-color: @accent;
+  color: #0f2020;
+
+  &:hover {
+    background-color: @accent-light;
+    box-shadow: 0 2px 12px fade(@accent, 40%);
   }
 }
