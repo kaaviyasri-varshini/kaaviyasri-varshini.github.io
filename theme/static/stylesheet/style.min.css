@@ -34,7 +34,7 @@ h6 {
 body {
   margin: 0;
   padding: 0;
-  background-color: #E8EBF5;
+  background-color: #DFDFF2;
   color: #464866;
   font-family: 'Source Sans Pro', 'Roboto', 'Open Sans', 'Liberation Sans', 'DejaVu Sans', 'Verdana', 'Helvetica', 'Arial', sans-serif;
   font-size: 1.02em;
@@ -66,7 +66,7 @@ aside {
   border-right: 1px solid rgba(255, 255, 255, 0.06);
 }
 aside a {
-  color: #E8EBF5;
+  color: #DFDFF2;
 }
 aside a:hover {
   color: #C1C8E4;
@@ -291,8 +291,8 @@ main footer span.footer-separator {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  background-color: #cbcedb;
-  border: 1px solid #c3c7da;
+  background-color: #c3c4d9;
+  border: 1px solid #bdc0d8;
   color: #7E85A8;
   padding: 0.3em 0.75em 0.3em 0.6em;
   font-size: 0.76em;
@@ -320,7 +320,7 @@ main footer span.footer-separator {
   font-size: 0.72em;
   opacity: 0.72;
   color: #7E85A8;
-  border-color: #ced2e2;
+  border-color: #c7c9e0;
 }
 .tag-cloud.tag-cloud--secondary a:hover {
   opacity: 1;
@@ -332,7 +332,7 @@ main footer span.footer-separator {
   display: inline-flex;
   align-items: center;
   background-color: transparent;
-  border: 1px dashed #c8ccde;
+  border: 1px dashed #c2c4dc;
   color: #7E85A8;
   padding: 0.3em 0.7em;
   font-size: 0.72em;

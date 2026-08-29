@@ -1,7 +1,7 @@
 AUTHOR = 'Kaaviyasri Varshini'
 SITENAME = 'Kaaviyasri Varshini'
 SITETITLE = 'Kaaviyasri Varshini'
-SITESUBTITLE = 'Software developer writing about AI, agents, and the tools that make them work.'
+SITESUBTITLE = 'writing about AI, agents, and the tools that make them work.'
 SITEURL = ""
 PATH = "content"
 TIMEZONE = 'Asia/Kolkata'
