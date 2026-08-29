@@ -157,6 +157,12 @@
 
   {% include "partial/sidebar.html" %}
 
+  {% if THEME_COLOR_ENABLE_USER_OVERRIDE %}
+  <button id="theme-toggle-btn" title="Toggle light/dark theme" aria-label="Toggle theme" onclick="(function(){var s=document.getElementById('dark-theme-style');var isDark=s&&!s.disabled;theme.switch(isDark?'light':'dark');})()">
+    <span id="theme-toggle-icon">☀</span>
+  </button>
+  {% endif %}
+
   <main>
     {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.main_menu %}
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -185,5 +191,35 @@
   {% include 'partial/cf_analytics.html' %}
 
   {% block additional_js %}{% endblock %}
+
+  {% if THEME_COLOR_ENABLE_USER_OVERRIDE %}
+  <script>
+    (function () {
+      function syncIcon() {
+        var s = document.getElementById('dark-theme-style');
+        var icon = document.getElementById('theme-toggle-icon');
+        if (!icon) return;
+        var isDark = s && !s.disabled;
+        icon.textContent = isDark ? '\u2600' : '\u263E'; // ☀ / ☾
+      }
+      // sync on load
+      syncIcon();
+      // re-sync whenever the stylesheet disabled state changes
+      var s = document.getElementById('dark-theme-style');
+      if (s) {
+        new MutationObserver(syncIcon).observe(s, { attributes: true, attributeFilter: ['disabled'] });
+      }
+      // also re-sync after any theme.switch call
+      var origSwitch = window.theme && window.theme.switch;
+      if (origSwitch) {
+        window.theme.switch = function () {
+          origSwitch.apply(this, arguments);
+          setTimeout(syncIcon, 50);
+        };
+      }
+      window.addEventListener('theme-changed', syncIcon);
+    })();
+  </script>
+  {% endif %}
 </body>
 </html>

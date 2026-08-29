@@ -188,3 +188,8 @@ a.btn:hover {
   background-color: #4DD9D9;
   box-shadow: 0 2px 12px rgba(42, 191, 191, 0.4);
 }
+#theme-toggle-btn {
+  background-color: #2E3047;
+  color: #C1C8E4;
+  border-color: rgba(193, 200, 228, 0.2);
+}
