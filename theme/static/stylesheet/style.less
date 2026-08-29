@@ -184,6 +184,15 @@ main {
         margin-bottom: 6px;
       }
 
+      // Post card title link — cyan so it reads as clearly clickable
+      h2 a {
+        color: @article-title-color;
+
+        &:hover {
+          color: @accent;
+        }
+      }
+
       p {
         color: @header-text-color;
         font-size: 0.86em;
