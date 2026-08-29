@@ -180,6 +180,11 @@ div.figure figcaption {
   border-color: #3e415a;
   color: #7E85A8;
 }
+.tag-cloud.tag-cloud--secondary .tag-overflow:hover {
+  border-color: #2ABFBF;
+  color: #4DD9D9;
+  opacity: 1;
+}
 a.btn {
   background-color: #2ABFBF;
   color: #0f2020;

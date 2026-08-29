@@ -46,8 +46,11 @@
       {% for tag in article.tags %}
         {% if loop.index <= 4 %}
           <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
-        {% elif loop.index == 5 %}
-          <span class="tag-overflow">+{{ article.tags|list|length - 4 }} more</span>
+        {% else %}
+          <a href="{{ SITEURL }}/{{ tag.url }}" class="tag-extra" style="display:none">{{ tag }}</a>
+          {% if loop.index == 5 %}
+          <button class="tag-overflow" onclick="(function(b){var tags=b.parentNode.querySelectorAll('.tag-extra');tags.forEach(function(t){t.style.display='inline-flex'});b.style.display='none';})(this)" type="button">+{{ article.tags|list|length - 4 }} more</button>
+          {% endif %}
         {% endif %}
       {% endfor %}
     </div>

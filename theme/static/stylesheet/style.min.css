@@ -11,7 +11,7 @@ h5,
 h6 {
   font-weight: 300;
   line-height: 1.1;
-  color: #2B2D4E;
+  color: #0E8080;
 }
 h1 {
   font-size: 2.4em;
@@ -336,10 +336,17 @@ main footer span.footer-separator {
   color: #7E85A8;
   padding: 0.3em 0.7em;
   font-size: 0.72em;
+  font-family: inherit;
   line-height: 1.4;
   border-radius: 999px;
   white-space: nowrap;
   opacity: 0.6;
+  cursor: pointer;
+}
+.tag-cloud .tag-overflow:hover {
+  opacity: 1;
+  border-color: #2ABFBF;
+  color: #2ABFBF;
 }
 a.btn,
 section#isso-thread section.auth-section p.post-action input {

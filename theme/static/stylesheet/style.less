@@ -412,7 +412,7 @@ main {
     }
   }
 
-  // "+N more" overflow pill
+  // "+N more" overflow pill — now a clickable button
   .tag-overflow {
     display: inline-flex;
     align-items: center;
@@ -421,10 +421,18 @@ main {
     color: @primary-mid;
     padding: .3em .7em;
     font-size: .72em;
+    font-family: inherit;
     line-height: 1.4;
     border-radius: 999px;
     white-space: nowrap;
     opacity: 0.6;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+      border-color: @accent;
+      color: @accent;
+    }
   }
 }
 
