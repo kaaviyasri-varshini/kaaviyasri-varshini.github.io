@@ -4,6 +4,7 @@ Category: Infrastructure
 Tags: azure, spot-vms, cloud, devops
 Slug: why-your-azure-spot-vm-keeps-going-down
 Cover: images/why-your-azure-spot-vm-keeps-going-down.png
+Featured_Image: /images/why-your-azure-spot-vm-keeps-going-down.png
 
 If your Azure Spot VM keeps dropping, it almost always comes down to how you configured its eviction type and policy when you created it. Spot VMs give you up to 90% off pay-as-you-go pricing by using Azure's unused capacity, but that discount comes with a real chance of interruption. Here's what's actually causing it, and how to control it.
 

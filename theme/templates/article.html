@@ -48,6 +48,9 @@
   {% endif %}
 
   <div>
+    {% if article.featured_image %}
+      <img src="{{ article.featured_image }}" alt="{{ article.title }}" style="width:100%;border-radius:8px;margin-bottom:1.5rem;">
+    {% endif %}
     {{ article.content }}
   </div>
   <div class="tag-cloud">
