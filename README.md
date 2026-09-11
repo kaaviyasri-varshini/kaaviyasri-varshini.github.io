@@ -1,4 +1,4 @@
-# rajacsp.github.io
+# kaaviyasri-varshini.github.io
 
 Personal blog built with [Pelican](https://getpelican.com/) and deployed to GitHub Pages via GitHub Actions.
 
