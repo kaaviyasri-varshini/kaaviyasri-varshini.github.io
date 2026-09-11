@@ -218,10 +218,8 @@ main article kbd {
 main article *:not(pre) > code {
   font-size: 0.8em;
   white-space: nowrap;
-  color: #c25;
+  font-weight: bold;
   padding: 1px 3px;
-  background-color: #f7f7f9;
-  border: 1px solid #e1e1e8;
   border-radius: 3px;
 }
 main article .comment-count {
