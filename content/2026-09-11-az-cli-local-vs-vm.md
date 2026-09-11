@@ -1,4 +1,3 @@
-```
 Title: AZ CLI Local Vs VM
 Date: 2026-09-11
 Category: Cloud Infrastructure
@@ -8,7 +7,6 @@ Status: Draft
 Featured_Image: /images/az-cli-local-vs-vm.png
 Cover: /images/az-cli-local-vs-vm.png
 
-```
 
 If you're new to Azure, it feels a little counterintuitive at first. You spin up a VM in Azure, and your instinct is to log into that VM and start running Azure commands from inside it — after all, that's where your "Azure stuff" lives, right? But then someone tells you to just run `az` from your own laptop, and it feels weird. Isn't the whole point of the cloud that things run in the cloud?
 
