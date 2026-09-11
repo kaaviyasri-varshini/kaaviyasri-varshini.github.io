@@ -3,7 +3,7 @@ Date: 2026-09-11
 Category: Cloud Infrastructure
 Tags: azure, az-cli, devops, cloud, sysadmin
 Slug: az-cli-local-vs-vm
-Status: Draft
+Status: published
 Featured_Image: /images/az-cli-local-vs-vm.png
 Cover: /images/az-cli-local-vs-vm.png
 
