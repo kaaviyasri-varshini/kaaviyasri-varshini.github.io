@@ -1,5 +1,5 @@
 ```
-Title: Why Run the Azure CLI (az) From Your Local Machine Instead of Inside a VM
+Title: AZ CLI Local Vs VM
 Date: 2026-09-11
 Category: Cloud Infrastructure
 Tags: azure, az-cli, devops, cloud, sysadmin
