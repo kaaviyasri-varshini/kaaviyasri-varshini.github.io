@@ -3,7 +3,8 @@ Date: 2026-09-12
 Category: Cloud Infrastructure
 Tags: azure, containers, vms, cloud-architecture
 Slug: container-apps-vs-virtual-machines
-Cover: content/images/container-apps-vs-virtual-machines.png
+Featured_Image: images/container-apps-vs-virtual-machines.png
+Cover: images/container-apps-vs-virtual-machines.png
 
 If you're trying to decide how to host your next app, this comes up constantly: should you spin up a Virtual Machine, or go with something like Azure Container Apps? Here's the breakdown.
 

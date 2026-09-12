@@ -3,7 +3,8 @@ Date: 2026-09-12
 Category: Cloud & Infrastructure
 Tags: dns, azure, containerapps, networking, fqdn
 Slug: what-is-an-fqdn
-Cover: content/images/what-is-an-fqdn.png
+Featured_Image: /images/what-is-an-fqdn.png
+Cover: /images/what-is-an-fqdn.png
 
 FQDN stands for Fully Qualified Domain Name. It's the complete, unambiguous address of a host on the internet — every level of the domain hierarchy spelled out, right up to the top-level domain. When you deploy something to the cloud and get back a long, auto-generated URL, that URL is an FQDN, and understanding its pieces makes debugging, DNS setup, and custom domains far less mysterious.
 
