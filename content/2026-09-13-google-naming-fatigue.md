@@ -3,8 +3,9 @@ Date: 2026-09-13
 Category: Tech Commentary
 Tags: Google, Rebranding, Cloud, Naming, Developer Experience
 Slug: google-naming-fatigue
+Featured_Image: /images/image.png
 
-![alt text]({static}/images/image.png)
+
 
 There's a specific flavor of fatigue that comes from working with Google's stack. It isn't the fatigue of a flaky test suite or a standup that ran long. It's the fatigue of reopening a bookmarked doc and discovering the product it describes now answers to a completely different name.
 
