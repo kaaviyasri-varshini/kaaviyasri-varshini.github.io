@@ -4,6 +4,7 @@ Category: LLM Engineering
 Tags: langsmith, observability, llm, tracing, evaluation, langchain
 Slug: what-is-langsmith-llm-observability
 Featured_Image: /images/what-is-langsmith-llm-observability.png
+Cover: /images/what-is-langsmith-llm-observability.png
 
 Shipping an LLM app is the easy part. Knowing why it gave a wrong answer at 2 a.m. on a Tuesday is the hard part. Traditional software fails loudly with a stack trace. LLM apps fail quietly: the code runs, the API returns 200, and the answer is confidently wrong. LangSmith is a platform built to make those silent failures visible.
 

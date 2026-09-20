@@ -4,6 +4,7 @@ Category: Observability
 Tags: logs, metrics, traces, spans, observability, monitoring, debugging
 Slug: logs-metrics-traces-spans
 Featured_Image: /images/logs-metrics-traces-spans.png
+Cover: /images/logs-metrics-traces-spans.png
 
 When something breaks in production, you need to answer three questions: what happened, how bad is it, and where did it go wrong? Logs, metrics, and traces each answer one of these. Spans are the pieces that make traces work. Together they are the core of observability.
 
