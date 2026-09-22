@@ -1,8 +1,10 @@
-Title: Azure Container Apps vs Docker: Understanding the Basics
+<img width="1672" height="941" alt="file_00000000f51c81fa9f9ab61f16d357ab" src="https://github.com/user-attachments/assets/548f9887-a78a-4856-8666-5d31b0c3b753" />Title: Azure Container Apps vs Docker: Understanding the Basics
 Date: 2026-09-22
 Category: Cloud Infrastructure
 Tags: Azure, Docker, Container Apps, Containers, DevOps
 Slug: azure-container-apps-vs-docker-basics
+Cover: images/file_00000000f51c81fa9f9ab61f16d357ab.png/
+
 
 If you've spent time with Docker, you already understand containers. Azure Container Apps doesn't replace that knowledge — it builds a managed layer on top of it. This post maps what you already know onto what Azure adds.
 
