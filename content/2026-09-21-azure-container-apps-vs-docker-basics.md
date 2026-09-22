@@ -3,6 +3,7 @@ Date: 2026-09-22
 Category: Cloud Infrastructure
 Tags: Azure, Docker, Container Apps, Containers, DevOps
 Slug: azure-container-apps-vs-docker-basics
+featured_image: images/file_00000000f51c81fa9f9ab61f16d357ab.png
 Cover: images/file_00000000f51c81fa9f9ab61f16d357ab.png/
 
 
