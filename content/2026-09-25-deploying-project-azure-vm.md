@@ -3,8 +3,8 @@ Date: 2026-09-25
 Category: Cloud Infrastructure
 Tags: Azure, VM, Deployment, DevOps
 Slug: deploying-project-azure-vm
-featured_image: images/file_000000005f8481faa09be08eb28b0032.png/
-Cover: images/file_000000005f8481faa09be08eb28b0032.png/
+featured_image: content/images/file_000000005f8481faa09be08eb28b0032.png
+Cover: content/images/file_000000005f8481faa09be08eb28b0032.png
 
 ## Why Azure VMs for Deployment
 
