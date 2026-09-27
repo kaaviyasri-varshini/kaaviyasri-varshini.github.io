@@ -3,7 +3,6 @@ Date: 2026-09-27
 Category: Cloud
 Tags: Azure, Virtual Machines, vCPU Quota, Regions, Azure CLI, DevOps
 Slug: azure-vcpu-quota-per-region
-Status: Draft
 Featured_Image: /images/azure-vcpu-quota-per-region.png
 Cover: /images/azure-vcpu-quota-per-region.png
 
