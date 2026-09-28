@@ -1,12 +1,12 @@
 Title: Running Your Own LLM on an Azure VM with llama.cpp
 Date: 2026-09-27
 Category: Deployment
-Tags: llama.cpp, Azure, LLM, Self-Hosting, GGUF, Study Bot
+Tags: llama.cpp, Azure, LLM, Self-Hosting, GGUF
 Slug: self-hosting-llm-azure-vm-llama-cpp
 Featured_Image: /images/self-hosting-llm-azure-vm-llama-cpp.png
 Cover: /images/self-hosting-llm-azure-vm-llama-cpp.png
 
-You don't need a GPU or a paid API to put a language model behind your app. With llama.cpp, a regular Azure VM can run a quantized open model and serve it through an OpenAI-compatible endpoint. That's how we run the model behind Study Bot. This post covers how the setup fits together, what decides whether it's fast enough, and how to test your app after deployment without running the model on your own laptop.
+You don't need a GPU or a paid API to put a language model behind your app. With llama.cpp, a regular Azure VM can run a quantized open model and serve it through an OpenAI-compatible endpoint. This post covers how the setup fits together, what decides whether it's fast enough, and how to test your app after deployment without running the model on your own laptop.
 
 ## The Big Picture
 
@@ -14,15 +14,15 @@ You don't need a GPU or a paid API to put a language model behind your app. With
 
 **llama-server** — The HTTP server that ships with llama.cpp. It exposes OpenAI-compatible routes such as `/v1/chat/completions`, so any code already written for the `openai` Python client can use it by changing only the `base_url`. Your app talks to it over localhost, just like it would talk to a database.
 
-**Two services, one VM** — The app (Study Bot) and the model server run as two separate systemd services on the same machine. Each one restarts on its own, has its own logs, and starts on boot, so a model crash doesn't take the web app down with it.
+**Two services, one VM** — The app and the model server run as two separate systemd services on the same machine. Each one restarts on its own, has its own logs, and starts on boot, so a model crash doesn't take the web app down with it.
 
 ## Choosing the Right Model and VM
 
-**RAM is the first limit** — A 4-bit quantized (Q4_K_M) model needs roughly 1 GB of RAM per billion parameters, plus extra for the context window. A 3B model fits in about 3 GB and a 7–8B model in about 5–6 GB. Leave headroom for MongoDB, Python, and the OS.
+**RAM is the first limit** — A 4-bit quantized (Q4_K_M) model needs roughly 1 GB of RAM per billion parameters, plus extra for the context window. A 3B model fits in about 3 GB and a 7–8B model in about 5–6 GB. Leave headroom for your database, Python, and the OS.
 
-**CPU speed sets the experience** — On a typical 4-vCPU VM, a 7B model generates around 3–10 tokens per second and a 1–3B model is noticeably faster. That's comfortable for one student at a time. If many students will use it at once, pick a smaller model or a bigger VM.
+**CPU speed sets the experience** — On a typical 4-vCPU VM, a 7B model generates around 3–10 tokens per second and a 1–3B model is noticeably faster. That's comfortable for one user at a time. If many users will hit it at once, pick a smaller model or a bigger VM.
 
-**Small instruct models are the sweet spot** — For a study assistant, models like Qwen2.5-3B/7B-Instruct, Llama-3.2-3B-Instruct, or Phi-3.5-mini give answers that are good enough at speeds that feel responsive. Start small, measure, and only move up if answer quality is actually a problem.
+**Small instruct models are the sweet spot** — Models like Qwen2.5-3B/7B-Instruct, Llama-3.2-3B-Instruct, or Phi-3.5-mini give answers that are good enough at speeds that feel responsive. Start small, measure, and only move up if answer quality is actually a problem.
 
 ## Setting It Up
 
@@ -50,7 +50,7 @@ This one change makes the testing tricks below possible.
 
 ## Testing Without Running the Model Locally
 
-**Test the live deployment directly** — Since the model runs on the VM, you can open the live site and use it like a student would. To check the model on its own, SSH into the VM and send it a request with `curl http://127.0.0.1:8080/v1/chat/completions`. Follow the logs with `journalctl -u studybot -f` and `journalctl -u llama-server -f` while you test.
+**Test the live deployment directly** — Since the model runs on the VM, you can open the live site and use it like a real user would. To check the model on its own, SSH into the VM and send it a request with `curl http://127.0.0.1:8080/v1/chat/completions`. Follow the logs with `journalctl -u your-app -f` and `journalctl -u llama-server -f` while you test.
 
 **Borrow the VM's model with an SSH tunnel** — Run `ssh -L 8080:127.0.0.1:8080 user@<vm-ip>` from your laptop. While that session is open, `localhost:8080` on your machine reaches the model on the VM, so your local copy of the app works unchanged. You test against the exact model production uses, install nothing locally, and the port stays closed to the internet.
 
