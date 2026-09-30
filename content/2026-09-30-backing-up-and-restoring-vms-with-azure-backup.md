@@ -5,7 +5,6 @@ Tags: Azure, Azure Backup, Virtual Machines, Disaster Recovery, Recovery Service
 Slug: backing-up-and-restoring-vms-with-azure-backup
 Featured_Image: /images/bbacking-up-and-restoring-vms-with-azure-backu.png
 Cover: /images/backing-up-and-restoring-vms-with-azure-backup.png
-Status: Draft
 
 
 A VM that cannot be recovered is a risk no matter how well it runs. Azure Backup gives you a managed way to protect Azure virtual machines without deploying backup servers or agents by hand. This post walks through how it works, how to set it up, and how to restore when something goes wrong.
