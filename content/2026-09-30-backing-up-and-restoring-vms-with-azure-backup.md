@@ -3,6 +3,8 @@ Date: 2026-09-30
 Category: Cloud
 Tags: Azure, Azure Backup, Virtual Machines, Disaster Recovery, Recovery Services Vault
 Slug: backing-up-and-restoring-vms-with-azure-backup
+Featured_Image: /images/bbacking-up-and-restoring-vms-with-azure-backu.png
+Cover: /images/backing-up-and-restoring-vms-with-azure-backup.png
 Status: Draft
 
 
