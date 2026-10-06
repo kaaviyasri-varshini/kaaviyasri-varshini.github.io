@@ -1,5 +1,5 @@
 Title: HNSW: Hierarchical Navigable Small World
-Date: 2026-10-06=
+Date: 2026-10-05
 Category: AI / Machine Learning
 Tags: HNSW, Vector Search, Embeddings, Similarity Search, RAG, AI
 Slug: hnsw-hierarchical-navigable-small-world
